@@ -34,12 +34,10 @@ header {
 }
 
 a {
+    color: rgb(156, 156, 156);
+    cursor: pointer;
     text-decoration: none;
     transition: .1s ease-in;
-}
-
-a:visited {
-    color: rgb(192, 192, 192);
 }
 
 a:hover {
