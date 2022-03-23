@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
-import { AppRouting } from 'src/app/app.routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,11 +13,11 @@ import { AppRouting } from 'src/app/app.routing.module';
     ],
     imports: [
         CommonModule,
-        AppRouting
+        RouterModule
     ],
     exports: [
         NavigationComponent,
         FooterComponent
     ]
 })
-export class SharedModule { }
+export class CoreModule { }

@@ -1,0 +1,35 @@
+section {
+    display: flex;
+    padding: 100px 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form-wrapper {
+    border-radius: 5%;
+    padding: 2rem 0.95rem 2rem 0.95rem;
+    box-shadow: 1px 1px 38px -2px rgba(0, 0, 0, 0.73);
+    -webkit-box-shadow: 1px 1px 38px -2px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 1px 1px 38px -2px rgba(0, 0, 0, 0.73);
+}
+
+input {
+    margin: 0.3rem 0;
+    padding-left: 0.3rem;
+    font-size: 1rem;
+    transition: 1ms;
+}
+
+.loginBtn {
+    margin-top: 1rem;
+}
+
+button {
+    font-size: 1rem;
+}

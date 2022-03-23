@@ -1,0 +1,36 @@
+section {
+    display: flex;
+    padding: 100px 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form-wrapper {
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 2rem 0.95rem 2rem 0.95rem;
+}
+
+input {
+    margin: 0.3rem 0;
+    padding-left: 0.3rem;
+    font-size: 1rem;
+}
+
+.registerBtn {
+    margin-top: 1rem;
+}
+
+.switchBtn {
+    margin-top: 0.5rem;
+}
+
+button {
+    font-size: 1rem;
+}

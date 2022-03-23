@@ -15,4 +15,4 @@ import { HomeComponent } from './home/home.component';
         HomeComponent
     ]
 })
-export class LandingModule { }
+export class SharedModule { }

@@ -4,13 +4,12 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
-
 import { AppComponent } from './app.component';
-import { AppRouting as AppRoutingModule } from './app.routing.module';
-import { LandingModule } from './components/landing/landing.module';
-import { SharedModule } from './components/shared/shared.module';
-import { AuthModule } from './components/auth/auth.module';
+import { AppRoutingModule } from './app.routing.module';
 import { RouterModule } from '@angular/router';
+import { AuthModule } from './auth/auth.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -18,11 +17,11 @@ import { RouterModule } from '@angular/router';
     ],
     imports: [
         BrowserModule,
-        SharedModule,
-        LandingModule,
         AppRoutingModule,
         RouterModule,
         AuthModule,
+        CoreModule,
+        SharedModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFirestoreModule
     ],
