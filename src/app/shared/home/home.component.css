@@ -5,11 +5,25 @@ section {
     justify-content: space-between;
 }
 
+#container {
+    width: 1280px;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 #content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #f2ffa7;
+    background-color: #ffc13c;
     background-repeat: no-repeat;
     border-bottom: 2px solid #000;
 }

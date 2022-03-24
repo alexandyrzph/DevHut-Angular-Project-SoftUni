@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { ArticleModule } from './features/articles/article.module';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { SharedModule } from './shared/shared.module';
         CoreModule,
         SharedModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
-        AngularFirestoreModule
+        AngularFirestoreModule,
+        ArticleModule
     ],
     providers: [],
     bootstrap: [AppComponent]
