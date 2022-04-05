@@ -6,13 +6,12 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
     declarations: [
-        HomeComponent
+        HomeComponent,
     ],
     imports: [
         CommonModule
     ],
     exports: [
-        HomeComponent
     ]
 })
 export class SharedModule { }
