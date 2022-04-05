@@ -1,26 +1,26 @@
 <section>
-
-    <div class="form">
-        <div id="form-wrapper">
-            <div class="title">Welcome back</div>
-            <div class="subtitle">Login to your account!</div>
-            <form>
-                <div class="input-container ic2">
-                    <input id="Username" class="input" type="text" placeholder=" " />
-                    <div class="cut"></div>
-                    <label for="Username" class="placeholder">Username</label>
-                </div>
-                <div class="input-container ic2">
-                    <input id="Password" class="input" type="password" placeholder=" " />
-                    <div class="cut"></div>
-                    <label for="Password" class="placeholder">Password</label>
-                </div>
-                <button type="text" class="submit">Sign In</button>
-                <span>Don't have account yet? <a routerLink="/register">Sign Up</a></span>
-            </form>
+  <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
+  <div *ngIf="isLoading" style="text-align: center">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="form" *ngIf="!isLoading">
+    <div id="form-wrapper">
+      <div class="title">Welcome back</div>
+      <div class="subtitle">Login to your account!</div>
+      <form #signIn="ngForm" (ngSubmit)="onSubmit(signIn)">
+        <div class="input-container ic2">
+          <input id="email" name="email" class="input" ngModel type="text" placeholder=" " required email/>
+          <div class="cut cut-short"></div>
+          <label for="email" class="placeholder">Email</label>
         </div>
-
+        <div class="input-container ic2">
+          <input id="Password" ngModel name="password" class="input" type="password" placeholder=" " required [minLength]="6"/>
+          <div class="cut"></div>
+          <label for="Password" class="placeholder">Password</label>
+        </div>
+        <button type="submit" class="submit">Sign In</button>
+        <span>Don't have account yet? <a routerLink="/register" class="btn-link">Sign Up</a></span>
+      </form>
     </div>
-
-
+  </div>
 </section>

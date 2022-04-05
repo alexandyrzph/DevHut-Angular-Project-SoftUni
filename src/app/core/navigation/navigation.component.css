@@ -1,66 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
 header {
-    background: #e9e9e9;
-    padding: 20px 100px;
-    border-bottom: 1px solid black;
+  background: #e9e9e9;
+  padding: 20px 100px;
+  border-bottom: 1px solid black;
 }
 
 .header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 1280px;
-    max-width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 1280px;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .navbar {
-    display: flex;
-    background-color: transparent;
+  display: flex;
+  background-color: transparent;
 }
 
 .nav-links {
-    display: flex;
-    flex-flow: row;
-    list-style: none;
-    flex-wrap: wrap;
+  display: flex;
+  flex-flow: row;
+  list-style: none;
+  flex-wrap: wrap;
+  color: #1b1c1e;
 }
 
 .logo {
-    font-family: 'Limelight', cursive;
-    font-weight: 400;
-    font-size: 2.5rem;
-    line-height: 30px;
-    color: black;
+  font-family: 'Limelight', cursive;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 30px;
+  color: #1b1c1e;
 }
 
 .nav-item {
-    margin-left: 2vmax;
+  margin-left: 2vmax;
 }
 
 a {
-    color: rgb(43, 43, 43);
-    cursor: pointer;
-    text-decoration: none;
-    transition: .1s ease-in;
-    font-size: 0.95rem;
+  color: rgb(43, 43, 43);
+  cursor: pointer;
+  text-decoration: none;
+  transition: .1s ease-in;
+  font-size: 0.95rem;
 }
 
 a:hover {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .registerLink {
-    border: 1px solid black;
-    border-radius: 30px 30px 30px 30px;
-    padding: 0.5rem 1rem;
-    background-color: black;
-    color: rgb(212, 212, 212);
-    transform: .1ms ease-in;
+  border: 1px solid black;
+  border-radius: 30px 30px 30px 30px;
+  padding: 0.5rem 1rem;
+  background-color: #1b1c1e;
+  color: rgb(212, 212, 212);
+  transform: .1ms ease-in;
 }
 
 .registerLink:hover {
-    color: white;
+  color: white;
 }
