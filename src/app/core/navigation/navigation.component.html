@@ -15,15 +15,15 @@
           <a routerLink="/profile">Profile</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isAuthenticated">
           <a routerLink="/login">Login</a>
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a>Logout</a>
+          <a (click)="onLogout()">Logout</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isAuthenticated">
           <a class="registerLink" routerLink="/register">Register</a>
         </li>
       </ul>
