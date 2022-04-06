@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject, throwError } from 'rxjs';
+import { User } from '../../core/models/user.model';
 import { Router } from '@angular/router';
-import { User } from '../../models/user.model';
 import { environment } from '../../../environments/environment';
-import { AuthResponseData } from '../../models/auth.model';
+import { AuthResponseData } from '../../core/models/auth.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  userSubject = new BehaviorSubject<User | null>(null);
-  token!: string;
+  userSubject = new BehaviorSubject<User | any>(null);
   private tokenExpirationTime: any;
 
   constructor(private http: HttpClient,
@@ -62,9 +61,9 @@ export class AuthService {
     const userData: {
       email: string;
       id: string;
-      _token: string ;
+      _token: string;
       _tokenExpirationDate: string
-    // @ts-ignore
+      // @ts-ignore
     } = JSON.parse(localStorage.getItem('userData'));
     if (!userData) {
       return;
@@ -100,16 +99,16 @@ export class AuthService {
     }, expirationDuration);
   }
 
+  hasNoUserLogged(): boolean {
+    let userInLocalStorage = localStorage.getItem('userData');
+    return userInLocalStorage == null;
+  }
+
   private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(
       new Date().getTime() + expiresIn * 1000
     );
-    const user = new User(
-      email,
-      userId,
-      token,
-      expirationDate
-    );
+    const user = new User(email, userId, token, expirationDate);
     this.userSubject.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));

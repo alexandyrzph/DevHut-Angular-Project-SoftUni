@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth/auth.service';
+import { AuthService } from '../auth-service/auth.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -28,11 +28,13 @@ export class RegisterComponent implements OnInit {
     this.isLoading = true;
     if (password != repass) {
       this.error = 'Password\'s don\'t match!';
+      this.isLoading = false;
       return;
     }
 
     this.authService.signUp(email, password).subscribe(
       resData => {
+
         this.isLoading = false;
         this.router.navigate(['/articles']);
       }, errorMessage => {

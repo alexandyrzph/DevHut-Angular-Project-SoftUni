@@ -12,11 +12,11 @@
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a routerLink="/profile">Profile</a>
+          <a routerLink="/auth/profile">Profile</a>
         </li>
 
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <a routerLink="/login">Login</a>
+          <a routerLink="/auth/login">Login</a>
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
@@ -24,7 +24,11 @@
         </li>
 
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <a class="registerLink" routerLink="/register">Register</a>
+          <a class="border-link" routerLink="/auth/register">Register</a>
+        </li>
+
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a class="border-link" routerLink="/articles/create">Create</a>
         </li>
       </ul>
     </nav>

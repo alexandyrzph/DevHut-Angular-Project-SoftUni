@@ -14,12 +14,13 @@
           <label for="email" class="placeholder">Email</label>
         </div>
         <div class="input-container ic2">
-          <input id="Password" ngModel name="password" class="input" type="password" placeholder=" " required [minLength]="6"/>
+          <input id="Password" ngModel name="password" class="input" type="password" placeholder=" " required
+                 [minLength]="6"/>
           <div class="cut"></div>
           <label for="Password" class="placeholder">Password</label>
         </div>
-        <button type="submit" class="submit">Sign In</button>
-        <span>Don't have account yet? <a routerLink="/register" class="btn-link">Sign Up</a></span>
+        <button type="submit" class="submit" [disabled]="!signIn.valid">Sign In</button>
+        <span>Don't have account yet? <a routerLink="/auth/register" class="btn-link">Sign Up</a></span>
       </form>
     </div>
   </div>

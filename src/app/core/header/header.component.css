@@ -54,15 +54,14 @@ a:hover {
   color: rgb(0, 0, 0);
 }
 
-.registerLink {
+.border-link {
   border: 1px solid black;
   border-radius: 30px 30px 30px 30px;
   padding: 0.5rem 1rem;
   background-color: #1b1c1e;
   color: rgb(212, 212, 212);
-  transform: .1ms ease-in;
 }
 
-.registerLink:hover {
+.border-link:hover {
   color: white;
 }
