@@ -1,0 +1,21 @@
+<section id="content">
+  <div id="container">
+    <br>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" >
+      <h1>Create Post</h1>
+      <label for="title">Title</label>
+      <input formControlName="title" type="text" name="title" id="title">
+
+      <label for="description">Description</label>
+      <textarea formControlName="description" type="text" name="description" id="description"></textarea>
+
+      <label for="category">Category</label>
+      <input formControlName="category" type="text" name="category" id="category">
+
+      <label for="imgUrl">Post Image Url</label>
+      <input formControlName="imgUrl" type="text" name="imgUrl" id="imgUrl">
+
+      <button type="submit" [disabled]="!formGroup.valid">Create</button>
+    </form>
+  </div>
+</section>

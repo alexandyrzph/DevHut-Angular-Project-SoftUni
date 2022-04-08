@@ -1,0 +1,20 @@
+<div class="articles" *ngFor="let article of articles; let i = index;">
+
+  <div class="container">
+    <div class="box">
+      <div class="imgBx">
+        <img
+          [src]="article[i][i].imgUrl">
+      </div>
+      <div class="content">
+        <div>
+          <h2>{{ article[i].title }}</h2>
+          <button [routerLink]="['/articles/' + articles[i]]">
+            Read More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
