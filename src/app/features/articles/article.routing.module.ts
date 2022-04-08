@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { AuthGuard } from '../../core/guard/auth.guard';
 import { MyArticlesComponent } from './my-articles/my-articles.component';
 import { ArticlesComponent } from './articles.component';
 import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleEditComponent } from './article-edit/article-edit.component';
 
 const routes: Routes = [
   {

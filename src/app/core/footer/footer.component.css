@@ -1,20 +1,23 @@
 #footer {
-  border-top: 1px solid #2c2c2c;
-  background-color: #d4d4d4;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 100px;
-  width: 100%;
+    border-top: 1px solid #2c2c2c;
+    background-color: #d4d4d4;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
 }
 
-
 .footer-wrapper {
-  width: 1280px;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 40px;
-  margin: auto;
+    width: 1280px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+    margin: auto;
+}
+
+p {
+    font-size: 13px;
 }
