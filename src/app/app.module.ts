@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from '../environments/environment';
 // import { RouterModule } from '@angular/router';
 // import { AuthModule } from './auth/auth.module';
 // import { SharedModule } from './shared/shared.module';

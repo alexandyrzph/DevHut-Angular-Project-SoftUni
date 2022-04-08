@@ -8,11 +8,11 @@
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a routerLink="/articles">Explore</a>
+          <a routerLink="/articles/all">Explore</a>
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a routerLink="/auth/profile">Profile</a>
+          <a routerLink="/articles/my-articles">My Articles</a>
         </li>
 
         <li class="nav-item" *ngIf="!isAuthenticated">

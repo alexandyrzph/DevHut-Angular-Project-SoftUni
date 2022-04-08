@@ -1,0 +1,15 @@
+section {
+  padding: 30px 100px;
+  display: flex;
+}
+
+#container {
+  width: 1280px;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 100px auto;
+}

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { ArticlesComponent } from "./articles/articles.component";
-import { ArticleCreateComponent } from './article-create/article-create.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { AuthGuard } from '../../core/guard/auth.guard';
+import { MyArticlesComponent } from './my-articles/my-articles.component';
+import { ArticlesComponent } from './articles.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 const routes: Routes = [
   {
@@ -13,17 +14,25 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'create',
-        component: ArticleCreateComponent
+        path: 'all',
+        component: ArticleListComponent
       },
       {
-        path: 'edit/:id',
-        component: ArticleEditComponent,
+        path: 'create',
+        component: ArticleEditComponent
+      },
+      {
+        path: 'my-articles',
+        component: MyArticlesComponent
       },
       {
         path: ':id',
         component: ArticleDetailsComponent
-      }
+      },
+      {
+        path: ':id/edit',
+        component: ArticleEditComponent,
+      },
     ]
   }
 ];

@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   signUp(email: string, password: string) {
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseAPI_KEY}`,
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseConfig.apiKey}`,
       {
         email,
         password,
@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseAPI_KEY}`,
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseConfig.apiKey}`,
       {
         email,
         password,
@@ -63,8 +63,7 @@ export class AuthService {
       id: string;
       _token: string;
       _tokenExpirationDate: string
-      // @ts-ignore
-    } = JSON.parse(localStorage.getItem('userData'));
+    } = JSON.parse(localStorage.getItem('userData') as string);
     if (!userData) {
       return;
     }
@@ -112,6 +111,10 @@ export class AuthService {
     this.userSubject.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
+  }
+
+  getCurrentUserToken(): string {
+    return JSON.parse(localStorage.getItem('userData') as string).id;
   }
 
   private handleError(errorRes: HttpErrorResponse) {

@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  firebaseAPI_KEY: 'AIzaSyCyzllMbYROzfrHBB1lACJDilfAKwAlngo'
+  firebaseConfig: {
+    apiKey: "AIzaSyCyzllMbYROzfrHBB1lACJDilfAKwAlngo",
+    authDomain: "devhub-angular-softuni.firebaseapp.com",
+    databaseURL: "https://devhub-angular-softuni-default-rtdb.firebaseio.com",
+    projectId: "devhub-angular-softuni",
+    storageBucket: "devhub-angular-softuni.appspot.com",
+    messagingSenderId: "474961188409",
+    appId: "1:474961188409:web:f92957e7d958849aba5fe8",
+    measurementId: "G-CGVCMEYG52"
+  }
 };
 
 /*

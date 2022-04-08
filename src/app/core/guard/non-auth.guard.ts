@@ -10,8 +10,8 @@ export class NonAuthGuard implements CanLoad {
   }
 
   canLoad(route: Route): boolean {
-    const noUserLogged = this.authService.hasNoUserLogged();
-    if (!noUserLogged) {
+    const noUserLogged = this.authService.userSubject == null;
+    if (noUserLogged) {
       this.router.navigate(['/']);
       return false;
     } else {
