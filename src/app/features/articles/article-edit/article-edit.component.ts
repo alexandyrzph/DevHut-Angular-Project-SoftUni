@@ -7,10 +7,9 @@ import { CrudService } from '../../../core/services/crud.service';
 @Component({
   selector: 'app-articles-edit',
   templateUrl: './article-edit.component.html',
-  styleUrls: ['./article-edit.component.css']
+  styleUrls: ['./article-edit.component.css'],
 })
 export class ArticleEditComponent implements OnInit {
-
   isLoading = false;
 
   id!: string;
@@ -18,20 +17,20 @@ export class ArticleEditComponent implements OnInit {
 
   formGroup!: FormGroup;
 
-  constructor(private authService: AuthService,
-              private fb: FormBuilder,
-              private route: ActivatedRoute,
-              private router: Router,
-              private crudService: CrudService) {
-  }
-
+  constructor(
+    private authService: AuthService,
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private crudService: CrudService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-        this.id = params['id'];
-        this.editMode = params['id'] != null;
-        this.initForm();
-    })
+      this.id = params['id'];
+      this.editMode = params['id'] != null;
+      this.initForm();
+    });
   }
 
   onSubmit() {
@@ -41,13 +40,12 @@ export class ArticleEditComponent implements OnInit {
     } else {
       // console.log(this.formGroup.value);
       this.formGroup.value.ownerId = this.authService.getCurrentUserToken();
-      this.crudService.postArticle(this.formGroup.value).subscribe(
-        user => {
-          console.log(user);
-        }
-      );
+      this.crudService.postArticle(this.formGroup.value).subscribe((user) => {
+        console.log(user);
+      });
       this.formGroup.reset();
     }
+    this.router.navigate(['/articles/all']);
   }
 
   private initForm() {
@@ -57,7 +55,7 @@ export class ArticleEditComponent implements OnInit {
       description: ['', [Validators.required]],
       category: ['', [Validators.required]],
       imgUrl: ['', [Validators.required]],
-      comments: [[]]
-    })
+      comments: [[]],
+    });
   }
 }

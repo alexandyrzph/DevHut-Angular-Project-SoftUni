@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { AuthGuard } from '../../core/guard/auth.guard';
 import { MyArticlesComponent } from './my-articles/my-articles.component';
@@ -15,31 +15,30 @@ const routes: Routes = [
     children: [
       {
         path: 'all',
-        component: ArticleListComponent
+        component: ArticleListComponent,
       },
       {
         path: 'create',
-        component: ArticleEditComponent
+        component: ArticleEditComponent,
       },
       {
         path: 'my-articles',
-        component: MyArticlesComponent
+        component: MyArticlesComponent,
       },
       {
         path: ':id',
-        component: ArticleDetailsComponent
+        component: ArticleDetailsComponent,
       },
       {
         path: ':id/edit',
         component: ArticleEditComponent,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ArticleRoutingModule {
-}
+export class ArticleRoutingModule {}
