@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../auth/auth-service/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../../core/services/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CrudService } from '../../../core/services/crud.service';
 import { Article } from '../../../shared/models/article.model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-articles-edit',
@@ -66,7 +65,7 @@ export class ArticleEditComponent implements OnInit {
       description: [article?.description || '', [Validators.required]],
       category: [article?.category || '', [Validators.required]],
       imgUrl: [article?.imgUrl || '', [Validators.required]],
-      ownerId: [this.authService.getCurrentUserId()]
+      ownerId: [JSON.parse(localStorage.getItem('userData') as string).id]
     });
   }
 }

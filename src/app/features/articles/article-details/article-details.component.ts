@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CrudService } from '../../../core/services/crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../../../auth/auth-service/auth.service';
+import { AuthService } from '../../../core/services/auth.service';
 import { Article } from '../../../shared/models/article.model';
 import { Subscription } from 'rxjs';
 

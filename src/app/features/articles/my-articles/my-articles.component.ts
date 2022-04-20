@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { CrudService } from 'src/app/core/services/crud.service';
+import { Article } from '../../../shared/models/article.model';
 
 @Component({
   selector: 'app-my-articles',
@@ -8,14 +8,25 @@ import { CrudService } from 'src/app/core/services/crud.service';
   styleUrls: ['./my-articles.component.css'],
 })
 export class MyArticlesComponent implements OnInit {
-  articles: any;
+  articles: Article[] = [];
+  uid!: string | null;
+  respData: any;
+  email!: string | null;
 
-  constructor(
-    private crudService: CrudService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private crudService: CrudService) {
+  }
 
   ngOnInit(): void {
-    this.crudService.getMyPosts();
+    this.crudService.getAllArticles().subscribe(data => {
+      this.respData = data;
+      for (const el in this.respData) {
+        this.respData[el].id = el;
+      }
+      this.articles = Object.values(data);
+      console.log(this.articles)
+      this.uid = JSON.parse(localStorage.getItem('userData') as string).id;
+      console.log(this.uid)
+      this.email = JSON.parse(localStorage.getItem('userData') as string).email;
+    });
   }
 }

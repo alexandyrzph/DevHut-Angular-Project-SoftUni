@@ -103,11 +103,6 @@ export class AuthService {
     return localStorage.getItem('userData') !== null;
   }
 
-  hasNoUserLogged(): boolean {
-    let userInLocalStorage = localStorage.getItem('userData');
-    return userInLocalStorage == null;
-  }
-
   private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(
       new Date().getTime() + expiresIn * 1000
