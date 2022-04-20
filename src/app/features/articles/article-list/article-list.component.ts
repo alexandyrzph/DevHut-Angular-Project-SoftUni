@@ -15,7 +15,6 @@ export class ArticleListComponent implements OnInit {
       let ids = Object.keys(articles);
       Object.values(articles).map((el, index) => {
         el.id = ids[index];
-        // console.log(el);
       });
       this.articles = Object.values(articles);
     });

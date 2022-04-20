@@ -1,3 +1,10 @@
+:host {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+}
+
 #container {
     display: flex;
     justify-content: center;

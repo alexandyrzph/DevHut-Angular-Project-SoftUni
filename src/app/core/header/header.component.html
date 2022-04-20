@@ -4,23 +4,23 @@
     <nav class="navbar">
       <ul class="nav-links">
         <li class="nav-item">
-          <a routerLink="/">Home</a>
+          <a class="header-link" routerLink="/">Home</a>
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a routerLink="/articles/all">Explore</a>
+          <a class="header-link" routerLink="/articles/all">Explore</a>
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a routerLink="/articles/my-articles">My Articles</a>
+          <a class="header-link" routerLink="/articles/my-articles">My Articles</a>
         </li>
 
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <a routerLink="/auth/login">Login</a>
+          <a class="header-link" routerLink="/auth/login">Login</a>
         </li>
 
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a (click)="onLogout()">Logout</a>
+          <a class="header-link" (click)="onLogout()">Logout</a>
         </li>
 
         <li class="nav-item" *ngIf="!isAuthenticated">

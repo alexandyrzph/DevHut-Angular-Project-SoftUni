@@ -1,1 +1,14 @@
-<p>article-details works!</p>
+<section class="content" *ngIf="post">
+  <h1>Title: {{ post?.title }}</h1>
+  <p>Category: {{ post?.category }}</p>
+  <p>Description: {{ post?.description }}</p>
+  <img [src]="post?.imgUrl" alt="post-image">
+  <br>
+  <div *ngIf="currentUserId == postOwnerId">
+    <a routerLink="/articles/{{currentPostId}}/edit">Edit</a>
+    <a (click)="onDelete()">Delete</a>
+  </div>
+</section>
+<section class="loading-spinner" *ngIf="!post">
+  <app-loading-spinner></app-loading-spinner>
+</section>

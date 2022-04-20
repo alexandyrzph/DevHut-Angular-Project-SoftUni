@@ -1,4 +1,4 @@
-<div class="content">
+<div *ngIf="articles" class="content">
 
     <div id="main-container">
         <h1>All Posts</h1>
@@ -26,4 +26,8 @@
 
         </div>
     </div>
+</div>
+
+<div *ngIf="!articles">
+  <app-loading-spinner></app-loading-spinner>
 </div>
