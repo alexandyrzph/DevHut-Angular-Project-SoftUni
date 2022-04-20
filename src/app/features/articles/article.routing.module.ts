@@ -33,6 +33,10 @@ const routes: Routes = [
         path: ':id/edit',
         component: ArticleEditComponent,
       },
+      {
+        path: '',
+        redirectTo: 'all'
+      }
     ],
   },
 ];
