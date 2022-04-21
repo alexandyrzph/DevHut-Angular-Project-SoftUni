@@ -14,8 +14,10 @@ export class ArticleEditComponent implements OnInit {
   isLoading = false;
   formGroup!: FormGroup;
   article!: Article;
-  id!: string;
+  articleId!: string;
   editMode = false;
+  hasPermission!: boolean;
+  userId: string | null = JSON.parse(localStorage.getItem('userData') as string).uid;
 
   constructor(
     private authService: AuthService,
@@ -31,12 +33,17 @@ export class ArticleEditComponent implements OnInit {
     this.initForm();
     this.isLoading = false;
     this.route.params.subscribe((params: Params) => {
-      this.id = params['id'];
-      this.editMode = params['id'] != null;
+      this.articleId = params['id'];
+      this.editMode = this.articleId != null;
     });
     if (this.editMode) {
-      this.crudService.getPostById(this.id).subscribe(article => {
-        this.initForm(article);
+      this.isLoading = true;
+      this.crudService.getPostById(this.articleId).subscribe(article => {
+        this.hasPermission = article.ownerId == this.userId;
+        if (this.hasPermission) {
+          this.initForm(article);
+        }
+          this.isLoading = false;
       });
     }
   }
@@ -44,19 +51,18 @@ export class ArticleEditComponent implements OnInit {
   onSubmit() {
     if (this.editMode) {
       this.isLoading = true;
-      this.crudService.updateArticle(this.id, this.formGroup.value).subscribe(data => {
+      this.crudService.updateArticle(this.articleId, this.formGroup.value).subscribe(data => {
         this.isLoading = false;
-        this.router.navigate(['/articles/' + this.id]);
+        this.router.navigate(['/articles/' + this.articleId]);
       });
-      console.log(this.formGroup.value);
     } else {
       this.isLoading = true;
       this.crudService.postArticle(this.formGroup.value).subscribe(article => {
         this.isLoading = false;
         this.router.navigate(['/articles/all']);
       });
-      this.formGroup.reset();
     }
+    this.formGroup.reset();
   }
 
   private initForm(article?: Article) {
@@ -65,7 +71,7 @@ export class ArticleEditComponent implements OnInit {
       description: [article?.description || '', [Validators.required]],
       category: [article?.category || '', [Validators.required]],
       imgUrl: [article?.imgUrl || '', [Validators.required]],
-      ownerId: [JSON.parse(localStorage.getItem('userData') as string).uid]
+      ownerId: [this.userId]
     });
   }
 }
