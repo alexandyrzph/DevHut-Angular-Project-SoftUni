@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     const repass = form.value.repass;
-    console.log(email, password, repass);
     this.isLoading = true;
     if (password != repass) {
       this.error = 'Password\'s don\'t match!';
@@ -34,7 +33,6 @@ export class RegisterComponent implements OnInit {
 
     this.authService.signUp(email, password).subscribe(
       resData => {
-
         this.isLoading = false;
         this.router.navigate(['/articles']);
       }, errorMessage => {

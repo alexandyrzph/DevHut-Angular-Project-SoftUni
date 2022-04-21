@@ -23,9 +23,7 @@ export class MyArticlesComponent implements OnInit {
         this.respData[el].id = el;
       }
       this.articles = Object.values(data);
-      console.log(this.articles)
-      this.uid = JSON.parse(localStorage.getItem('userData') as string).id;
-      console.log(this.uid)
+      this.uid = JSON.parse(localStorage.getItem('userData') as string).uid;
       this.email = JSON.parse(localStorage.getItem('userData') as string).email;
     });
   }

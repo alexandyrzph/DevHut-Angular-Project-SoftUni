@@ -1,5 +1,3 @@
-import { Comment } from './comment.model';
-
 export interface Article {
   id?: string;
   title: string;
@@ -7,5 +5,4 @@ export interface Article {
   imgUrl: string;
   category: string;
   ownerId: string;
-  comments?: Comment[];
 }

@@ -5,7 +5,7 @@ import { BehaviorSubject, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { AuthResponseData } from 'src/app/shared/models/auth.model';
-import { User } from 'src/app/shared/models/user.model';
+import { User } from '../../shared/models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -18,27 +18,27 @@ export class AuthService {
   }
 
   signUp(email: string, password: string) {
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseConfig.apiKey}`,
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`,
       {
         email,
         password,
         returnSecureToken: true
       }
-    )
-      .pipe(catchError(this.handleError), tap(resData => {
-          this.handleAuthentication(
-            resData.email,
-            resData.localId,
-            resData.idToken,
-            Number(resData.expiresIn
-            )
-          );
-        })
-      );
+    ).pipe(catchError(this.handleError),
+      tap(resData => {
+        this.handleAuthentication(
+          resData.email,
+          resData.localId,
+          resData.idToken,
+          Number(resData.expiresIn
+          )
+        );
+      })
+    );
   }
 
   login(email: string, password: string) {
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseConfig.apiKey}`,
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`,
       {
         email,
         password,
@@ -57,10 +57,15 @@ export class AuthService {
       );
   }
 
+
+  getUserToken() {
+    return JSON.parse(localStorage.getItem('userData') as string)._token;
+  }
+
   autoLogin() {
     const userData: {
       email: string;
-      id: string;
+      uid: string;
       _token: string;
       _tokenExpirationDate: string
     } = JSON.parse(localStorage.getItem('userData') as string);
@@ -70,7 +75,7 @@ export class AuthService {
 
     const loadedUser = new User(
       userData.email,
-      userData.id,
+      userData.uid,
       userData._token,
       new Date(userData._tokenExpirationDate)
     );
@@ -98,27 +103,18 @@ export class AuthService {
     }, expirationDuration);
   }
 
-
   isAuthenticated() {
     return localStorage.getItem('userData') !== null;
   }
 
-  private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
+  private handleAuthentication(email: string, uid: string, token: string, expiresIn: number) {
     const expirationDate = new Date(
       new Date().getTime() + expiresIn * 1000
     );
-    const user = new User(email, userId, token, expirationDate);
+    const user = new User(email, uid, token, expirationDate);
     this.userSubject.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
-  }
-
-  getCurrentUserId(): string {
-    return JSON.parse(localStorage.getItem('userData') as string).id;
-  }
-
-  getCurrentToken(): string {
-    return JSON.parse(localStorage.getItem('userData') as string).token;
   }
 
   private handleError(errorRes: HttpErrorResponse) {

@@ -17,7 +17,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (this.authService.isAuthenticated()) {
       const modifiedRequest = request.clone({
-        url: `${request.url}?auth=${localStorage.getItem('token')}`
+        url: `${request.url}?auth=${this.authService.getUserToken()}`
       });
       return next.handle(modifiedRequest)
     }

@@ -7,27 +7,27 @@
           <a class="header-link" routerLink="/">Home</a>
         </li>
 
-        <li class="nav-item" *ngIf="isAuthenticated">
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
           <a class="header-link" routerLink="/articles/all">Explore</a>
         </li>
 
-        <li class="nav-item" *ngIf="isAuthenticated">
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
           <a class="header-link" routerLink="/articles/my-articles">My Articles</a>
         </li>
 
-        <li class="nav-item" *ngIf="!isAuthenticated">
+        <li class="nav-item" *ngIf="!authService.isAuthenticated()">
           <a class="header-link" routerLink="/auth/login">Login</a>
         </li>
 
-        <li class="nav-item" *ngIf="isAuthenticated">
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
           <a class="header-link" (click)="onLogout()">Logout</a>
         </li>
 
-        <li class="nav-item" *ngIf="!isAuthenticated">
+        <li class="nav-item" *ngIf="!authService.isAuthenticated()">
           <a class="border-link" routerLink="/auth/register">Register</a>
         </li>
 
-        <li class="nav-item" *ngIf="isAuthenticated">
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
           <a class="border-link" routerLink="/articles/create">Create</a>
         </li>
       </ul>

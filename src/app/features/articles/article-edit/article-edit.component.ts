@@ -65,7 +65,7 @@ export class ArticleEditComponent implements OnInit {
       description: [article?.description || '', [Validators.required]],
       category: [article?.category || '', [Validators.required]],
       imgUrl: [article?.imgUrl || '', [Validators.required]],
-      ownerId: [JSON.parse(localStorage.getItem('userData') as string).id]
+      ownerId: [JSON.parse(localStorage.getItem('userData') as string).uid]
     });
   }
 }

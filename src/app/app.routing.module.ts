@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./core/home/home.component";
-import { NonAuthGuard } from './core/guard/non-auth.guard';
+import { NonAuthGuard } from './core/guards/non-auth.guard';
 
 
 const routes: Routes = [
