@@ -17,7 +17,8 @@ export class ArticleEditComponent implements OnInit {
   articleId!: string;
   editMode = false;
   hasPermission!: boolean;
-  userId: string | null = JSON.parse(localStorage.getItem('userData') as string).uid;
+  userId: string | null = JSON.parse(localStorage.getItem('userData') as string)
+    .uid;
 
   constructor(
     private authService: AuthService,
@@ -25,8 +26,7 @@ export class ArticleEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private crudService: CrudService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.isLoading = true;
@@ -35,15 +35,16 @@ export class ArticleEditComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.articleId = params['id'];
       this.editMode = this.articleId != null;
+      this.hasPermission = true;
     });
     if (this.editMode) {
       this.isLoading = true;
-      this.crudService.getPostById(this.articleId).subscribe(article => {
+      this.crudService.getPostById(this.articleId).subscribe((article) => {
         this.hasPermission = article.ownerId == this.userId;
         if (this.hasPermission) {
           this.initForm(article);
         }
-          this.isLoading = false;
+        this.isLoading = false;
       });
     }
   }
@@ -51,16 +52,20 @@ export class ArticleEditComponent implements OnInit {
   onSubmit() {
     if (this.editMode) {
       this.isLoading = true;
-      this.crudService.updateArticle(this.articleId, this.formGroup.value).subscribe(data => {
-        this.isLoading = false;
-        this.router.navigate(['/articles/' + this.articleId]);
-      });
+      this.crudService
+        .updateArticle(this.articleId, this.formGroup.value)
+        .subscribe((data) => {
+          this.isLoading = false;
+          this.router.navigate(['/articles/' + this.articleId]);
+        });
     } else {
       this.isLoading = true;
-      this.crudService.postArticle(this.formGroup.value).subscribe(article => {
-        this.isLoading = false;
-        this.router.navigate(['/articles/all']);
-      });
+      this.crudService
+        .postArticle(this.formGroup.value)
+        .subscribe((article) => {
+          this.isLoading = false;
+          this.router.navigate(['/articles/all']);
+        });
     }
     this.formGroup.reset();
   }
@@ -71,7 +76,7 @@ export class ArticleEditComponent implements OnInit {
       description: [article?.description || '', [Validators.required]],
       category: [article?.category || '', [Validators.required]],
       imgUrl: [article?.imgUrl || '', [Validators.required]],
-      ownerId: [this.userId]
+      ownerId: [this.userId],
     });
   }
 }
