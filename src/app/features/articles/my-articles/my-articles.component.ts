@@ -9,15 +9,17 @@ import { Article } from '../../../shared/models/article.model';
 })
 export class MyArticlesComponent implements OnInit {
   articles: Article[] = [];
+  isLoading: boolean = false;
   uid!: string | null;
+  ownerHasPosts!: boolean;
   respData: any;
   email!: string | null;
 
-  constructor(private crudService: CrudService) {
-  }
+  constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
-    this.crudService.getAllArticles().subscribe(data => {
+    this.isLoading = true;
+    this.crudService.getAllArticles().subscribe((data) => {
       this.respData = data;
       for (const el in this.respData) {
         this.respData[el].id = el;
@@ -25,6 +27,10 @@ export class MyArticlesComponent implements OnInit {
       this.articles = Object.values(data);
       this.uid = JSON.parse(localStorage.getItem('userData') as string).uid;
       this.email = JSON.parse(localStorage.getItem('userData') as string).email;
+      this.ownerHasPosts = this.articles.some(
+        (article) => article.ownerId == this.uid
+      );
+      this.isLoading = false;
     });
   }
 }

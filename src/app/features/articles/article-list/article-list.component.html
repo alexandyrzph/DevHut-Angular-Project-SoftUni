@@ -4,7 +4,7 @@
         <h1>All Posts</h1>
         <hr>
         <div *ngIf="articles " class="wrapper ">
-            <div class="articles " *ngFor="let article of articles ">
+            <div class="articles" *ngFor="let article of articles ">
 
                 <div class="container">
                     <div class="box">
@@ -29,5 +29,5 @@
 </div>
 
 <div *ngIf="!articles">
-  <app-loading-spinner></app-loading-spinner>
+    <app-loading-spinner></app-loading-spinner>
 </div>

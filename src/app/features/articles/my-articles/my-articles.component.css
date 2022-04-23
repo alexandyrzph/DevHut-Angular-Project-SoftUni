@@ -1,116 +1,121 @@
+:host {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
 
 #main-container {
-  width: 1280px;
-  max-width: 100%;
-  margin: auto;
+    width: 1280px;
+    max-width: 100%;
+    margin: auto;
 }
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .container .box {
-  position: relative;
-  width: 275px;
-  height: 275px;
-  background: #000;
-  transition: 0.5s;
-  transform-style: preserve-3d;
-  overflow: hidden;
-  margin-right: 15px;
-  margin-top: 45px;
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background: #000;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 45px;
 }
 
-.container .box:hover ~ .box {
-  transform: rotateY(-25deg);
+.container .box:hover~.box {
+    transform: rotateY(-25deg);
 }
 
 .container .box:hover {
-  transform: rotateY(0deg) scale(1.09);
-  z-index: 1;
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+    transform: rotateY(0deg) scale(1.09);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
 }
 
 .container .box .imgBx {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .container .box .imgBx:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #f00, #000);
-  z-index: 1;
-  opacity: 0;
-  transition: 0.5s;
-  mix-blend-mode: multiply;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #f00, #000);
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+    mix-blend-mode: multiply;
 }
 
 .container .box:hover .imgBx:before {
-  opacity: 1;
+    opacity: 1;
 }
 
 .container .box .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .container .box .content {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  padding: 20px;
-  align-items: flex-end;
-  box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 20px;
+    align-items: flex-end;
+    box-sizing: border-box;
 }
 
 .container .box .content h2 {
-  color: #fff;
-  transition: 0.35s;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  font-size: 20px;
-  transform: translateY(200px);
-  transition-delay: 0.3s;
+    color: #fff;
+    transition: 0.35s;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+    transform: translateY(200px);
+    transition-delay: 0.3s;
 }
 
 .container .box:hover .content h2 {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .container .box .content button {
-  color: #fff;
-  transition: 0.5s;
-  font-size: 14px;
-  transform: translateY(200px);
-  transition-delay: 0.4s;
+    color: #fff;
+    transition: 0.5s;
+    font-size: 14px;
+    transform: translateY(200px);
+    transition-delay: 0.4s;
 }
 
 .container .box:hover .content button {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 button {
-  cursor: pointer;
-  font-size: 13px;
-  color: whitesmoke;
-  background-color: #2c2c2c;
+    cursor: pointer;
+    font-size: 13px;
+    color: whitesmoke;
+    background-color: #2c2c2c;
 }

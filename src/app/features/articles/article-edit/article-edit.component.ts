@@ -72,11 +72,23 @@ export class ArticleEditComponent implements OnInit {
 
   private initForm(article?: Article) {
     this.formGroup = this.fb.group({
-      title: [article?.title || '', [Validators.required]],
-      description: [article?.description || '', [Validators.required]],
-      category: [article?.category || '', [Validators.required]],
-      imgUrl: [article?.imgUrl || '', [Validators.required]],
-      ownerId: [this.userId],
+      title: [
+        article?.title || '',
+        [Validators.required, Validators.minLength(5)],
+      ],
+      description: [
+        article?.description || '',
+        [Validators.required, Validators.minLength(7)],
+      ],
+      category: [
+        article?.category || '',
+        [Validators.required, Validators.minLength(3)],
+      ],
+      imgUrl: [
+        article?.imgUrl || '',
+        [Validators.required, Validators.pattern(/\.(jpe?g|png|gif|bmp)$/i)],
+      ],
+      ownerId: [this.userId, [Validators.required]],
     });
   }
 }
