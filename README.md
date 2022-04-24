@@ -1,27 +1,37 @@
 # DevHut
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
-## Development server
+DevHut is a place for developers to write articles about different topics about programming and different
+technologies. Its main goal is to help other people learn new things which they like.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>It's a project for the Angular Course in SoftUni (March 2022)
+##Application Structure and Actions
 
-## Code scaffolding
+- ###Public Part (accessible without authentication)
+  - Home Page
+  - Login Page
+  - Register Page
+- ###Private Part (accessible with authentication)
+  - All Articles Page
+  - Articles you've posted
+  - Create
+  - Details 
+  - Edit (for owners of the article)
+  - Delete (for owners of the article)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**All forms have added validation to prevent coming incorrect data**.
 
-## Build
+## Technologies and external resources used through the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- HTML5 & CSS3
+- Angular v13
+- Firebase
+  - Firebase **Authentication**
+  - Firebase **(Realtime Database)**
+- Loading spinner from `https://loading.io/`
 
-## Running unit tests
+## How to start the application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Install all the project dependencies with `npm install`
+2. Run command `ng server` or `ng s` to start the application.
+3. Go to `http://localhost:4200/` and there you will find the application
