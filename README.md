@@ -5,6 +5,7 @@ DevHut is a place for developers to write articles about different topics about 
 technologies. Its main goal is to help other people learn new things which they like.
 
 >It's a project for the Angular Course in SoftUni (March 2022)
+
 ##Application Structure and Actions
 
 - ###Public Part (accessible without authentication)
