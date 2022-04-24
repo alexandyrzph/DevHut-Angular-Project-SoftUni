@@ -6,13 +6,13 @@ technologies. Its main goal is to help other people learn new things which they 
 
 >It's a project for the Angular Course in SoftUni (March 2022)
 
-##Application Structure and Actions
+## Application Structure and Actions
 
-- ###Public Part (accessible without authentication)
+- ### Public Part (accessible without authentication)
   - Home Page
   - Login Page
   - Register Page
-- ###Private Part (accessible with authentication)
+- ### Private Part (accessible with authentication)
   - All Articles Page
   - Articles you've posted
   - Create
