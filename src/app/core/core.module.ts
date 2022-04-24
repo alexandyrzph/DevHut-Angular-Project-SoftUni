@@ -4,15 +4,12 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +19,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
   exports: [
     HeaderComponent,
     FooterComponent,
-    HomeComponent
   ],
   providers: [
     {

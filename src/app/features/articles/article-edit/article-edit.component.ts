@@ -13,6 +13,7 @@ import { Article } from '../../../shared/models/article.model';
 export class ArticleEditComponent implements OnInit {
   isLoading = false;
   formGroup!: FormGroup;
+  error!: string | null;
   article!: Article;
   articleId!: string;
   editMode = false;
@@ -26,7 +27,8 @@ export class ArticleEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private crudService: CrudService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.isLoading = true;
@@ -50,6 +52,10 @@ export class ArticleEditComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.formGroup.valid) {
+      this.error = 'Form is invalid!';
+      return;
+    }
     if (this.editMode) {
       this.isLoading = true;
       this.crudService
@@ -68,6 +74,10 @@ export class ArticleEditComponent implements OnInit {
         });
     }
     this.formGroup.reset();
+  }
+
+  onHandleError() {
+    this.error = null;
   }
 
   private initForm(article?: Article) {

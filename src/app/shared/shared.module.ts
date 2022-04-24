@@ -8,7 +8,7 @@ import { AlertComponent } from './alert/alert.component';
 @NgModule({
   declarations: [
     LoadingSpinnerComponent,
-    AlertComponent
+    AlertComponent,
   ],
   imports: [
     CommonModule,

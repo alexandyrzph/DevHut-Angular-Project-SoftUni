@@ -1,14 +1,24 @@
-<section class="content" *ngIf="post">
-  <h1>Title: {{ post?.title }}</h1>
-  <p>Category: {{ post?.category }}</p>
-  <p>Description: {{ post?.description }}</p>
-  <img [src]="post?.imgUrl" alt="post-image">
-  <br>
-  <div *ngIf="currentUserId == postOwnerId">
-    <a routerLink="/articles/{{currentPostId}}/edit">Edit</a>
-    <a (click)="onDelete()">Delete</a>
+<div class="container" *ngIf="post">
+  <div class="blog-post">
+    <div class="blog-post_img">
+      <img
+        [src]="post?.imgUrl"
+        alt="">
+    </div>
+    <div class="blog-post_info">
+
+      <h1 class="blog-post_title">{{ post?.title }}</h1>
+      <div class="blog-post_category">
+        <p>Category: <span>{{ post?.category }}</span></p>
+      </div>
+      <p class="blog-post_text">{{ post?.description }}</p>
+      <div class="action-buttons" *ngIf="currentUserId == postOwnerId">
+        <a class="blog-post_cta" routerLink="/articles/{{currentPostId}}/edit">Edit</a>
+        <a class="blog-post_cta" (click)="onDelete()">Delete</a>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 <section class="loading-spinner" *ngIf="!post">
   <app-loading-spinner></app-loading-spinner>
 </section>

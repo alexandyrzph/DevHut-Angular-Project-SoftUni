@@ -4,6 +4,10 @@
     justify-content: center;
 }
 
+.email {
+  font-style: italic;
+}
+
 #main-container {
     width: 1280px;
     max-width: 100%;

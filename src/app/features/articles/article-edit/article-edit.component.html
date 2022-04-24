@@ -1,30 +1,56 @@
 <section *ngIf="!isLoading" id="content">
-    <div id="container" *ngIf="hasPermission && !isLoading">
-        <br>
-        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-            <h1>{{ editMode ? 'Edit Post' : 'Create Post'}}</h1>
-            <label for="title">Title</label>
-            <input formControlName="title" type="text" name="title" id="title">
+  <div id="container" *ngIf="hasPermission && !isLoading">
+    <br>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <h1>{{ editMode ? 'Edit Post' : 'Create Post'}}</h1>
+      <label for="title">Title</label>
+      <input formControlName="title" type="text" name="title" id="title">
+      <span class="error-span"
+            *ngIf="formGroup.controls['title'].touched
+            &&
+            formGroup.controls['title'].invalid">
+        Title must be at least 5 characters long!
+      </span>
 
-            <label for="description">Description</label>
-            <textarea formControlName="description" type="text" name="description" id="description"></textarea>
+      <label for="description">Description</label>
+      <textarea formControlName="description" type="text" name="description" id="description"></textarea>
+      <span class="error-span"
+            *ngIf="formGroup.controls['description'].touched
+            &&
+            formGroup.controls['description'].invalid">
+        Description must be at least 7 characters long!
+      </span>
 
-            <label for="category">Category</label>
-            <input formControlName="category" type="text" name="category" id="category">
+      <label for="category">Category</label>
+      <input formControlName="category" type="text" name="category" id="category">
+      <span class="error-span"
+            *ngIf="formGroup.controls['category'].touched
+            &&
+            formGroup.controls['category'].invalid">
+        Category must be at least 3 characters long!
+      </span>
 
-            <label for="imgUrl">Post Image Url</label>
-            <input formControlName="imgUrl" type="text" name="imgUrl" id="imgUrl">
+      <label for="imgUrl">Post Image Url</label>
+      <input formControlName="imgUrl" type="text" name="imgUrl" id="imgUrl">
+      <span class="error-span"
+            *ngIf="formGroup.controls['imgUrl'].touched
+            &&
+            formGroup.controls['imgUrl'].invalid">
+        Image Url must be a valid image ending with png, jpg, etc.
+      </span>
 
-            <button type="submit" [disabled]="!formGroup.valid">{{ editMode ? 'Save changes' : 'Create' }}</button>
-        </form>
-    </div>
-    <div class="no-permission" *ngIf="!hasPermission">
-        <h1>You don't have permission to edit this post!</h1>
-    </div>
+      <button style="cursor: pointer;" type="submit"
+              [disabled]="formGroup.invalid">{{ editMode ? 'Save changes' : 'Create' }}</button>
+    </form>
+  </div>
+  <div class="no-permission" *ngIf="!hasPermission">
+    <h1>You don't have permission to edit this post!</h1>
+  </div>
 
 </section>
 
+<app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
 
 <section *ngIf="isLoading">
-    <app-loading-spinner></app-loading-spinner>
+  <app-loading-spinner></app-loading-spinner>
 </section>

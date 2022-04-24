@@ -1,0 +1,11 @@
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#content h1 {
+  margin-top: 2rem;
+  color: #1d1d1d;
+}
