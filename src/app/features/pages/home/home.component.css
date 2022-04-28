@@ -4,6 +4,7 @@ section {
   padding: 30px 100px;
   display: flex;
   justify-content: space-between;
+  height: 90%;
 }
 
 #container {
@@ -13,6 +14,7 @@ section {
   justify-content: space-between;
   align-items: center;
   margin: 100px auto;
+
 }
 
 #content {
@@ -26,7 +28,6 @@ section {
 
 .home-text h1 {
   color: rgb(0, 0, 0);
-  font-family: 'Bodoni Moda', serif;
   font-family: 'Playfair Display', serif;
   font-size: 4.5rem;
 }
