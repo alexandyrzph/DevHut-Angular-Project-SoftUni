@@ -119,3 +119,21 @@ button {
   color: whitesmoke;
   background-color: #2c2c2c;
 }
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.style-span {
+  background-size: 100% 67%;
+  display: inline;
+  z-index: -1;
+  background-image: linear-gradient(#ffc13c, #ffbb25);
+  background-position: 0 80%;
+  background-repeat: no-repeat;
+  margin-left: -.55rem;
+  margin-right: -.55rem;
+  padding-left: .55rem;
+  padding-right: .55rem;
+}
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CrudService } from '../../../core/services/crud.service';
 
 @Component({
@@ -6,9 +6,12 @@ import { CrudService } from '../../../core/services/crud.service';
   templateUrl: './article-list.component.html',
   styleUrls: ['./article-list.component.css'],
 })
-export class ArticleListComponent implements OnInit {
+export class ArticleListComponent implements OnInit, AfterViewInit {
   articles: any;
-  constructor(private crudService: CrudService) {}
+  isLoaded = false;
+
+  constructor(private crudService: CrudService) {
+  }
 
   ngOnInit(): void {
     this.crudService.getAllArticles().subscribe((articles) => {
@@ -18,5 +21,9 @@ export class ArticleListComponent implements OnInit {
       });
       this.articles = Object.values(articles);
     });
+  }
+
+  ngAfterViewInit() {
+    this.isLoaded = true;
   }
 }

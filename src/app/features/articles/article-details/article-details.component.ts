@@ -26,6 +26,10 @@ export class ArticleDetailsComponent implements OnInit {
     this.currentPostId = this.route.snapshot.params['id'];
     this.currentUserId = JSON.parse(localStorage.getItem('userData') as string).uid;
     this.crudService.getPostById(this.currentPostId).subscribe((post: Article | any) => {
+      if (!post) {
+        this.router.navigate(['/404-not-found']);
+        return;
+      }
       this.post = post;
       this.postOwnerId = post.ownerId;
     });

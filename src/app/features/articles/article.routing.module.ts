@@ -6,6 +6,7 @@ import { MyArticlesComponent } from './my-articles/my-articles.component';
 import { ArticlesComponent } from './articles.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
+import { NotFoundPageComponent } from '../pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'all'
+      },
+      {
+        path: '**',
+        component: NotFoundPageComponent
       }
     ],
   },
