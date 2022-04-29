@@ -3,27 +3,20 @@
   <div id="main-container">
     <h1>All <span class="style-span">Posts</span></h1>
     <hr>
-    <div *ngIf="articles " class="wrapper ">
-      <div class="articles" *ngFor="let article of articles ">
-
-        <div class="container">
-          <div class="box">
-            <div class="imgBx">
-              <img [src]="article.imgUrl ">
-            </div>
-            <div class="content">
-              <div>
-                <h2>{{ article.title }}</h2>
-                <button [routerLink]="[ '/articles/' + article.id] ">
-                  Read More
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    <div *ngIf="articles" class="wrapper">
+      <div class="articles" *ngFor="let article of articles | paginate: {
+      itemsPerPage: tableSize,
+      currentPage: page,
+      totalItems: count}; let i = index">
+        <app-article-list-item [article]="article"></app-article-list-item>
       </div>
-
+    </div>
+    <div class="pagination-controls">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      ></pagination-controls>
     </div>
   </div>
 </div>

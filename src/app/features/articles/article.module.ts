@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ArticlesComponent } from './articles.component';
+import { ArticleListItemComponent } from './article-list-item/article-list-item.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import { ArticlesComponent } from './articles.component';
     ArticleListComponent,
     ArticleDetailsComponent,
     ProfileComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleListItemComponent
   ],
   imports: [
     CommonModule,
     ArticleRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ]
 })
 export class ArticleModule {

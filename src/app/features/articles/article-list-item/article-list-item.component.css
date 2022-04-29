@@ -1,23 +1,3 @@
-:host {
-  display: flex;
-  flex: auto;
-  justify-content: center;
-}
-
-#main-container {
-  width: 1280px;
-  max-width: 100%;
-  margin: auto;
-}
-
-
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 
 .container .box {
   position: relative;
@@ -123,25 +103,4 @@ button {
 
 h1 {
   font-size: 2.5rem;
-}
-
-.style-span {
-  background-size: 100% 67%;
-  display: inline;
-  z-index: -1;
-  background-image: linear-gradient(#ffc13c, #ffbb25);
-  background-position: 0 80%;
-  background-repeat: no-repeat;
-  margin-left: -.55rem;
-  margin-right: -.55rem;
-  padding-left: .55rem;
-  padding-right: .55rem;
-}
-
-.pagination-controls {
-  display: flex;
-  margin-top: 2rem;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.12rem;
 }
