@@ -3,11 +3,11 @@ import { CrudService } from 'src/app/core/services/crud.service';
 import { Article } from '../../../shared/models/article.model';
 
 @Component({
-  selector: 'app-my-articles',
-  templateUrl: './my-articles.component.html',
-  styleUrls: ['./my-articles.component.css'],
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css'],
 })
-export class MyArticlesComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   articles: Article[] = [];
   isLoading: boolean = false;
   uid!: string | null;

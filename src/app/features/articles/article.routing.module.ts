@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../../core/guards/auth.guard';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
-import { MyArticlesComponent } from './my-articles/my-articles.component';
 import { ArticlesComponent } from './articles.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { NotFoundPageComponent } from '../pages/not-found-page/not-found-page.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -23,8 +23,8 @@ const routes: Routes = [
         component: ArticleEditComponent,
       },
       {
-        path: 'my-articles',
-        component: MyArticlesComponent,
+        path: 'profile',
+        component: ProfileComponent,
       },
       {
         path: ':id',
