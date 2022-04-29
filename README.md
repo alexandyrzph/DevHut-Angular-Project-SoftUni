@@ -36,5 +36,5 @@ technologies. Its main goal is to help other people learn new things which they 
 ## How to start the application
 
 1. Install all the project dependencies with `npm install`
-2. Run command `ng server` or `ng s` to start the application.
+2. Run command `ng serve` or `ng s` to start the application.
 3. Go to `http://localhost:4200/` and there you will find the application.
