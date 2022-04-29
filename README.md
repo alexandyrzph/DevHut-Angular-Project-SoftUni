@@ -29,6 +29,8 @@ technologies. Its main goal is to help other people learn new things which they 
   - Firebase **Authentication**
   - Firebase **(Realtime Database)**
 - Loading spinner from `https://loading.io/`
+- Ngx Pagination 
+- Angular Animations
 
 ## How to start the application
 
