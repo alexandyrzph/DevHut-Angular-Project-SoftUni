@@ -111,7 +111,7 @@
 }
 
 .container .box:hover .content h2 {
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 .container .box .content button {
@@ -123,7 +123,7 @@
 }
 
 .container .box:hover .content button {
-  transform: translateY(-10px);
+  transform: translateY(-90px);
 }
 
 button {
