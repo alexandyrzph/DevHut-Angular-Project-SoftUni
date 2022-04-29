@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { CoreModule } from './core/core.module';
 import { PagesModule } from './features/pages/pages.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PagesModule } from './features/pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    PagesModule
+    PagesModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })

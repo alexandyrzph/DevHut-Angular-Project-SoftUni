@@ -1,6 +1,6 @@
-<section id="content">
+<section id="content" @enterAnimation>
   <div id="container">
-    <div class="home-text">
+    <div class="home-text fadeinAnim" >
       <h1>The community <br> that helps you <br> grow.</h1>
       <p>
         A place for developers to share their experience
@@ -8,7 +8,7 @@
       <hr>
       <button routerLink="/articles/">{{ buttonText | titlecase }}</button>
     </div>
-    <div class="image">
+    <div class="image fadeinAnim">
       <img src="/assets/web-developer.svg" alt="">
     </div>
 
