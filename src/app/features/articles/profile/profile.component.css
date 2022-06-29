@@ -1,4 +1,3 @@
-
 .email {
   background-size: 100% 67%;
   display: inline;
@@ -7,9 +6,9 @@
   background-image: linear-gradient(#ffc13c, #ffbb25);
   background-position: 0 80%;
   background-repeat: no-repeat;
-  margin-right: -.55rem;
-  padding-left: .55rem;
-  padding-right: .55rem;
+  margin-right: -0.55rem;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
 }
 
 #main-container {
@@ -133,7 +132,6 @@ button {
   margin-bottom: 2.5rem;
 }
 
-
 @media screen and (max-width: 992px) {
   #main-container {
     max-width: unset;
@@ -141,7 +139,7 @@ button {
   }
 
   .wrapper {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   h1 {
@@ -156,7 +154,7 @@ button {
   }
 
   .wrapper {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   h1 {
@@ -175,6 +173,6 @@ button {
   }
 
   .wrapper {
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
