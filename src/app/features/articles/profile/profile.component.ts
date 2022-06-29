@@ -9,6 +9,7 @@ import { Article } from '../../../shared/models/article.model';
 })
 export class ProfileComponent implements OnInit {
   articles: Article[] = [];
+  userArticles: Article[] = [];
   isLoading: boolean = false;
   uid!: string | null;
   ownerHasPosts!: boolean;
@@ -31,6 +32,7 @@ export class ProfileComponent implements OnInit {
         (article) => article.ownerId == this.uid
       );
       this.isLoading = false;
+      this.userArticles = this.articles.filter(article => article.ownerId == this.uid);
     });
   }
 }

@@ -1,37 +1,93 @@
 <header>
   <div class="header-wrapper">
-    <a routerLink="/" class="logo">DevHut</a>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li class="nav-item">
-          <a class="header-link" routerLink="/">Home</a>
+    <a (click)="isActive = false" routerLink="/" class="logo">DevHut</a>
+    <nav class="navbar" [classList]="isActive ? 'navbar open' : 'navbar'">
+      <ul
+        class="nav-links"
+        [classList]="isActive ? 'nav-links open' : 'nav-links'"
+      >
+        <li [classList]="isActive ? 'nav-item mobile' : 'nav-item'">
+          <a (click)="toggleNavbar()" class="header-link" routerLink="/"
+            >Home</a
+          >
         </li>
 
-        <li class="nav-item" *ngIf="authService.isAuthenticated()">
-          <a class="header-link" routerLink="/articles/all">Explore</a>
+        <li
+          [classList]="isActive ? 'nav-item mobile' : 'nav-item'"
+          *ngIf="authService.isAuthenticated()"
+        >
+          <a
+            (click)="toggleNavbar()"
+            class="header-link"
+            routerLink="/articles/all"
+            >Explore</a
+          >
         </li>
 
-        <li class="nav-item" *ngIf="authService.isAuthenticated()">
-          <a class="header-link" routerLink="/articles/profile">Profile</a>
+        <li
+          [classList]="isActive ? 'nav-item mobile' : 'nav-item'"
+          *ngIf="authService.isAuthenticated()"
+        >
+          <a
+            (click)="toggleNavbar()"
+            class="header-link"
+            routerLink="/articles/profile"
+            >Profile</a
+          >
         </li>
 
-        <li class="nav-item" *ngIf="!authService.isAuthenticated()">
-          <a class="header-link" routerLink="/auth/login">Login</a>
+        <li
+          [classList]="isActive ? 'nav-item mobile' : 'nav-item'"
+          *ngIf="!authService.isAuthenticated()"
+        >
+          <a
+            (click)="toggleNavbar()"
+            class="header-link"
+            routerLink="/auth/login"
+            >Login</a
+          >
         </li>
 
-        <li class="nav-item" *ngIf="authService.isAuthenticated()">
-          <a class="header-link" (click)="onLogout()">Logout</a>
+        <li
+          [classList]="isActive ? 'nav-item mobile' : 'nav-item'"
+          *ngIf="authService.isAuthenticated()"
+        >
+          <a (click)="toggleNavbar()" class="header-link" (click)="onLogout()"
+            >Logout</a
+          >
         </li>
 
-        <li class="nav-item" *ngIf="!authService.isAuthenticated()">
-          <a class="border-link" routerLink="/auth/register">Register</a>
+        <li
+          [classList]="isActive ? 'nav-item mobile' : 'nav-item'"
+          *ngIf="!authService.isAuthenticated()"
+        >
+          <a
+            (click)="toggleNavbar()"
+            [classList]="isActive ? 'border-link mobile' : 'border-link'"
+            routerLink="/auth/register"
+            >Register</a
+          >
         </li>
 
-        <li class="nav-item" *ngIf="authService.isAuthenticated()">
-          <a class="border-link" routerLink="/articles/create">Create</a>
+        <li
+          [classList]="isActive ? 'nav-item mobile' : 'nav-item'"
+          *ngIf="authService.isAuthenticated()"
+        >
+          <a
+            (click)="toggleNavbar()"
+            [classList]="
+              isActive ? 'border-link mobile header-link' : 'border-link'
+            "
+            routerLink="/articles/create"
+            >Create</a
+          >
         </li>
       </ul>
     </nav>
+    <div class="hamburger" (click)="toggleNavbar()">
+      <div [classList]="isActive ? 'line1 toggle' : 'line1'"></div>
+      <div [classList]="isActive ? 'line2 toggle' : 'line2'"></div>
+      <div [classList]="isActive ? 'line3 toggle' : 'line3'"></div>
+    </div>
   </div>
-
 </header>

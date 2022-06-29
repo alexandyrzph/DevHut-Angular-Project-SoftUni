@@ -1,8 +1,3 @@
-:host {
-  display: flex;
-  flex: auto;
-  justify-content: center;
-}
 
 .email {
   background-size: 100% 67%;
@@ -18,17 +13,19 @@
 }
 
 #main-container {
-  width: 1280px;
-  max-width: 100%;
-  margin: auto;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 2rem;
+  margin-top: 30px;
 }
 
 .container .box {
@@ -39,8 +36,6 @@
   transition: 0.5s;
   transform-style: preserve-3d;
   overflow: hidden;
-  margin-right: 15px;
-  margin-top: 45px;
 }
 
 .container .box:hover ~ .box {
@@ -138,3 +133,48 @@ button {
   margin-bottom: 2.5rem;
 }
 
+
+@media screen and (max-width: 992px) {
+  #main-container {
+    max-width: unset;
+    width: unset;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-container {
+    max-width: unset;
+    width: unset;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #main-container {
+    max-width: unset;
+    width: unset;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(1,1fr);
+  }
+}

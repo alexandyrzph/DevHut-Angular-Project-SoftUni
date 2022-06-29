@@ -11,7 +11,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
         query('.fadeinAnim', [
           style({ opacity: 0, transform: 'translateX(-20px)' }),
           stagger('400ms', [
-            animate('500ms 0.5s ease-in-out',
+            animate('500ms 0.25s ease-in-out',
               style({ opacity: 1, transform: 'translateY(0)' }))
           ])
         ], { optional: true }),

@@ -1,42 +1,54 @@
-section {
-  padding: 30px 100px;
-  display: flex;
-  justify-content: space-between;
-  height: 90%;
-}
-
 #container {
   width: 1280px;
   max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 100px auto;
-
+  margin-left: auto;
+  margin-right: auto;
+  column-gap: 10%;
 }
 
 #content {
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #ffd885;
+  background: linear-gradient(
+    317deg,
+    rgba(255, 174, 0, 1) 0%,
+    rgba(255, 174, 0, 1) 50%,
+    rgba(255, 149, 0, 1) 100%
+  );
   background-repeat: no-repeat;
   border-bottom: 2px solid #000;
 }
 
 .home-text h1 {
   color: rgb(0, 0, 0);
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 4.5rem;
+}
+
+.home-text {
+  width: 100%;
 }
 
 .home-text p {
   color: rgb(0, 0, 0);
   font-size: 1.2rem;
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   margin-top: 0.4rem;
   border-bottom: 1px solid black;
+}
+
+.home__img {
+  max-width: 500px;
+  width: 100%;
 }
 
 button {
@@ -65,4 +77,73 @@ button:hover {
 button:active {
   transition: 100ms ease-in;
   transform: scale(0.9);
+}
+
+@media only screen and (max-width: 1920px) {
+  #content {
+    padding: unset;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+  .home-text h1 {
+    font-size: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  #container {
+    column-gap: unset;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  #content {
+    padding: unset;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #container {
+    column-gap: unset;
+  }
+
+ 
+}
+
+@media only screen and (max-width: 768px) {
+  #content {
+    padding: unset;
+  }
+  #container > div.home-text.fadeinAnim.ng-tns-c18-0 > h1 {
+    text-align: center;
+  }
+
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #container {
+    column-gap: unset;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .home__img {
+    display: none;
+  }
+
+  #container {
+    column-gap: unset;
+  }
 }

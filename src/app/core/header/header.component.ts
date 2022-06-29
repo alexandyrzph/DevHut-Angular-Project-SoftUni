@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  isActive: boolean = false;
+
   constructor(public authService: AuthService) {
   }
 
@@ -16,6 +18,10 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  toggleNavbar() {
+    this.isActive = !this.isActive;
   }
 
 }

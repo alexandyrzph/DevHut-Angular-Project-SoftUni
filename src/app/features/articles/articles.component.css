@@ -4,12 +4,26 @@ section {
 }
 
 #container {
-  width: 1280px;
-  max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  max-width: 1280px;
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin: 50px auto;
 }
+
+@media screen and (max-width: 640px) {
+  section {
+    padding: unset;
+  }
+
+  #main-container > h1 {
+    text-align: center;
+  }
+
+}
+@media screen and (max-width: 768px) {
+  section {
+    padding: unset
+  }
+} 

@@ -1,22 +1,17 @@
-:host {
-  display: flex;
-  flex: auto;
-  justify-content: center;
-}
-
 #main-container {
-  width: 1280px;
-  max-width: 100%;
+  max-width: 1280px;
+  width: 100%;
   margin: auto;
 }
 
-
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .container .box {
@@ -132,10 +127,10 @@ h1 {
   background-image: linear-gradient(#ffc13c, #ffbb25);
   background-position: 0 80%;
   background-repeat: no-repeat;
-  margin-left: -.55rem;
-  margin-right: -.55rem;
-  padding-left: .55rem;
-  padding-right: .55rem;
+  margin-left: -0.55rem;
+  margin-right: -0.55rem;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
 }
 
 .pagination-controls {
@@ -144,4 +139,50 @@ h1 {
   justify-content: center;
   align-items: center;
   font-size: 1.12rem;
+}
+
+@media screen and (max-width: 992px) {
+  #main-container {
+    max-width: unset;
+    width: unset;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-container {
+    max-width: unset;
+    width: unset;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #main-container {
+    max-width: unset;
+    width: unset;
+  }
+
+  #main-container .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
 }

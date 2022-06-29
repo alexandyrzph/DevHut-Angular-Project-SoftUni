@@ -1,64 +1,72 @@
-:host {
-  display: flex;
-  flex: auto;
-  justify-content: center;
-  align-items: center;
-}
-
 #container {
   display: flex;
   justify-content: center;
   width: 1280px;
   max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 form {
-  width: 900px;
+  width: 40%;
   display: flex;
+  border-radius: 15px;
   flex-direction: column;
-  padding: 150px;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.77);
-  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.77);
-  -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.77);
+  padding: 2.5rem 4rem 4rem;
+  background-color: #f0efef;
+  box-shadow: 0px 5px 15px -11px #000000;
+  justify-content: center;
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 2.5rem;
   font-size: 30px;
 }
 
 input,
 textarea {
   min-width: 240px;
-  margin: 10px auto;
+  margin: 0 auto 1.5rem;
   width: 100%;
-  display: block;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0.2rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  background-color: transparent;
+  border-style: none;
+  border-bottom: 2px solid #b7b7b7;
+  outline: none;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  transition: all 50ms;
+  border-bottom: 2px solid #000000;
+}
+
+textarea {
+  resize: none;
 }
 
 button {
+  margin-top: 1rem;
   padding: 10px;
   font-size: 17px;
-  border-radius: 30px;
-  text-transform: uppercase;
+  width: 100%;
+  margin-left: auto;
+  font-size: 1.3rem;
+  margin-right: auto;
+  border-radius: 10px;
   font-weight: bold;
-  background-color: white;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.77);
-  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.77);
-  -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.77);
+  color: #000000;
+  transition: all 0.5ms;
+  box-shadow: 0px 1px 7px -3px #000000;
+  border: none;
+}
+
+button:disabled {
+  color: #868686;
+  background-color: #e9e9e9;
 }
 
 .error-span {
@@ -68,5 +76,11 @@ button {
 
 input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
-  border: 1px solid red;
+  border-bottom: 2px solid red;
+}
+
+@media screen and (max-width: 640px) {
+  form {
+    width: 30%;
+  }
 }

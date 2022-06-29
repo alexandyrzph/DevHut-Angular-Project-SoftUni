@@ -6,8 +6,6 @@
   transition: 0.5s;
   transform-style: preserve-3d;
   overflow: hidden;
-  margin-top: 45px;
-  margin-right: 20px;
 }
 
 .container .box:hover ~ .box {
@@ -102,4 +100,25 @@ button {
 
 h1 {
   font-size: 2.5rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .container .box {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container .box {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container .box {
+    width: 300px;
+    height: 300px;
+  }
 }
