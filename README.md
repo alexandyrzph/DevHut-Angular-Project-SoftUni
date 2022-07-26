@@ -4,7 +4,7 @@
 DevHut is a place for developers to write articles about different topics about programming and different
 technologies. Its main goal is to help other people learn new things which they like.
 
-#### Application is deployed and is accessible on `https://alexandyrzph.github.io/DevHut-Angular-Project-SoftUni/`
+#### Application is deployed on Firebase - [DevHut](https://devhub-angular-softuni.web.app/)
 >It's a project for the Angular Course in SoftUni (March 2022)
 ## Application Structure and Actions
 
