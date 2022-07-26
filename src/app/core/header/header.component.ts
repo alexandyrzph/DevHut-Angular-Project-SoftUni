@@ -1,27 +1,27 @@
-import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-
   isActive: boolean = false;
+  windowWidth: Number = window.innerWidth;
+  constructor(public authService: AuthService) {}
 
-  constructor(public authService: AuthService) {
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onLogout() {
     this.authService.logout();
   }
 
   toggleNavbar() {
-    this.isActive = !this.isActive;
+    this.isActive = false;
   }
 
+  toggleBurgerNavbar() {
+    this.isActive = !this.isActive;
+  }
 }

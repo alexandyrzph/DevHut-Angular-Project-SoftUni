@@ -76,7 +76,9 @@
           <a
             (click)="toggleNavbar()"
             [classList]="
-              isActive ? 'border-link mobile header-link' : 'border-link'
+              isActive && windowWidth < 768
+                ? 'border-link mobile header-link'
+                : 'border-link'
             "
             routerLink="/articles/create"
             >Create</a
@@ -84,7 +86,7 @@
         </li>
       </ul>
     </nav>
-    <div class="hamburger" (click)="toggleNavbar()">
+    <div class="hamburger" (click)="toggleBurgerNavbar()">
       <div [classList]="isActive ? 'line1 toggle' : 'line1'"></div>
       <div [classList]="isActive ? 'line2 toggle' : 'line2'"></div>
       <div [classList]="isActive ? 'line3 toggle' : 'line3'"></div>
