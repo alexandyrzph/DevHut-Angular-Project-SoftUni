@@ -1,6 +1,6 @@
 section {
-  padding: 30px 100px;
   display: flex;
+  height: 100vh;
 }
 
 #container {
@@ -9,7 +9,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 640px) {

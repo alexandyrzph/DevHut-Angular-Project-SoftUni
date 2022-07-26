@@ -24,7 +24,6 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   gap: 2rem;
-  margin-top: 30px;
 }
 
 .container .box {
@@ -42,7 +41,7 @@
 }
 
 .container .box:hover {
-  transform: rotateY(0deg) scale(1.09);
+  transform: rotateY(0deg) scale(1.03);
   z-index: 1;
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
 }
